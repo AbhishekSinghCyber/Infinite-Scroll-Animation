@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinte Scroll Animation</title>
+    <style>
+        .container{
+            width: 100%;
+            background-color: sandybrown;
+            overflow: hidden;
+            padding: 30px 0;
+            margin-top: 200px;
+        }
+        .track{
+            display: flex;
+            width: max-content;
+            animation: scrolling 7s linear infinite;
+        }
+        @keyframes scrolling {
+            0% {
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(-30%);
+            }
+        }
+        .container:hover .track{
+            animation-play-state: paused;
+        }
+        .card{
+            height: 300px;
+            width: 200px;
+            border-radius: 15px;
+            background-color:palegreen;
+            margin: 0 10px;
+            display: flex;
+            flex: 0 0 auto;
+            justify-content: center;
+            align-items: center;
+            color: magenta;
+            font-weight: bold;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="track">
+            <div class="card">card1</div>
+            <div class="card">card2</div>
+            <div class="card">card3</div>
+            <div class="card">card4</div>
+            <!-- duplicate this item -->
+             <div class="card">card1</div>
+             <div class="card">card2</div>
+             <div class="card">card3</div>
+             <div class="card">card4</div>
+        </div>
+    </div>
+</body>
+</html>
